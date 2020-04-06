@@ -1,0 +1,17 @@
+html {
+	background-color: white;
+	box-sizing: border-box;
+}
+
+*, *::after, *::before {
+	box-sizing: inherit;
+	margin:0;
+	padding:0;
+}
+body {
+	font-size: $font_size_base-small;
+	line-height: $line_height-base;
+	@include font ($font-main, normal, $font-normal);
+	vertical-align: baseline;
+	
+}

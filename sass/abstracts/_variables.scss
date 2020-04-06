@@ -1,0 +1,60 @@
+/// @type list
+
+/// font
+$font-main: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-monospace: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+
+/// font's weights
+$font_light: 300;
+$font_normal: 400;
+$font_semi-bold: 600;
+$font_bold: 700;
+
+
+/// colors
+/// @type Color
+
+
+/// Container's maximum width
+/// @type  Length
+$page_width-max: 73.75rem; //1180px;
+$page_width-min: 50rem;
+
+
+
+//// @type Map
+/// if 1rem = 16px => { 576px = 36em; 768px = 48em; 992px = 62em; 1200px = 75em; }
+$media_queries-up: (
+    'small': (
+        "breakpoint": '(min-width: 36em)',
+    ),
+    'medium': (
+        "breakpoint": '(min-width: 48em)',
+    ),
+    'large': (
+        "breakpoint": '(min-width: 62em)',
+	),
+    'xlarge': (
+        "breakpoint": '(min-width: 75em)',
+    )
+);
+
+
+/// font size
+
+$font_size_base-small: 1rem;
+$font_size_base-medium: 1.1rem;
+$font_size_base-large: 1.2rem;
+$line_height-base: 1.6;
+
+
+/// margins
+
+$margin_base: 1em;
+$margin_base-less: 1em;
+$margin_base-more: 1.5em;
+
+
+
+

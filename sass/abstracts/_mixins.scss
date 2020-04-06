@@ -1,0 +1,118 @@
+/// font family
+@mixin font ($font-family, $font-style:inherit, $font-weight:inherit) {
+	font-family: $font-family;
+	font-style: $font-style;
+	font-weight: $font-weight;	
+}
+
+/// link hover visited active focus
+/// @param $self - current selector
+
+/// 1. plain visited hover active focus
+@mixin on_event_vhaf ($self: false) {
+	@if $self {
+		&, &:visited, &:hover, &:active, &:focus {
+			@content;
+		}
+	} @else {
+		&:visited, &:hover, &:active, &:focus {
+			@content;
+		}
+	}
+}
+/// 2. plain hover active focus. no rules for visited
+@mixin on_event_haf  ($self: false) {
+	@if $self {
+		&, &:hover, &:active, &:focus {
+			@content;
+		}
+	} @else {
+		&:hover, &:active, &:focus {
+			@content;
+		}
+	}
+}
+
+/// 3. plain hover
+@mixin on_event_h ($self: false) {
+	@if $self {
+		&, &:hover {
+			@content;
+		}
+	} @else {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+/// 4. plain active focus
+@mixin on_event_af ($self: false) {
+	@if $self {
+		&, &:active, &:focus {
+			@content;
+		}
+	} @else {
+		&:hover, &:active {
+			@content;
+		}
+	}
+}
+
+
+/// 5. plain hover active
+@mixin on_event_ha ($self: false) {
+	@if $self {
+		&, &:hover, &:active {
+			@content;
+		}
+	} @else {
+		&:hover, &:active {
+			@content;
+		}
+	}
+}
+
+/// 6. plain hover focus
+@mixin on_event_hf ($self: false) {
+	@if $self {
+		&, &:hover, &:focus {
+			@content;
+		}
+	} @else {
+		&:hover, &:focus {
+			@content;
+		}
+	}
+}
+
+
+@mixin media_query-up ($size) {
+    @each $item, $value in $media_queries-up {
+        @if $item == $size {
+            @if map-get($value, "breakpoint") != null {
+                @media only screen and #{map-get($value, "breakpoint")} {
+                    @content;
+                }
+            }//if
+        }//if
+    }//each
+}//mixin media-query-up
+
+
+
+/// if $margin top and bottom are not given it takes values from $margin_base-less  $margin_base-more
+/// if $margin left and right not given it takes auto
+@mixin gutter(
+  $less_more: true,
+  $right: auto,
+  $left: $right,
+  $margin_base-less:$margin_base-less,
+  $margin_base-more:$margin_base-more)
+  {
+    @if $less_more {
+      margin: $margin_base-less $right $margin_base-more $left;
+    } @else {
+      margin: $margin_base-more $right $margin_base-less $left;
+    }
+}

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/// based on:
+/// @link https://sass-guidelin.es/#architecture
+/// @link https://github.com/HugoGiraudel/sass-boilerplate
+
+//abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+//vendors normalize
+@import "vendors/normalize";
+
+//base
+@import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/helpers";
+
+//components
+@import "components/buttons";
+
+//layout
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
+
+//pages
+@import "pages/home";
+
+//themes
+@import "themes/default";
+
