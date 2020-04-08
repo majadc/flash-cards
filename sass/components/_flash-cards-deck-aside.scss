@@ -1,0 +1,24 @@
+.flash-cards {
+	&__deck-aside {
+		background-color: darkmagenta;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		&--empty {
+			display: none;	
+		}
+		&.is-up {
+			justify-content: flex-start;
+		}
+		&.is-down {
+			justify-content: flex-end;
+		}
+	}
+	&__card-aside {
+		background-color: floralwhite;
+		
+		margin: 1em 0;
+		display: flex;
+		align-items: center;
+	}
+}

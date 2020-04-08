@@ -1,0 +1,38 @@
+.flash-cards {
+	&__deck-main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__card {
+		&-main {
+			flex: 1 1 $basis-card-main;
+			margin: 1em;
+			display: flex;
+		}
+		&-image {
+			flex: 1 1 99%;
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+			
+		}
+		
+		&-description {
+			flex: 0 0 0;
+			height: 0px;
+			overflow: hidden;
+		}
+
+
+
+		&--drop-zone {
+			min-height: 3rem;
+			background-color: firebrick;
+		}
+	}	
+}
+
+
+

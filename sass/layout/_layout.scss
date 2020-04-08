@@ -1,28 +1,33 @@
 .flash-cards {
-	width: $page_width-max;
-	margin:0 auto;
+	&__page {
+		width: $page_width-max;
+		margin:0 auto;
+	}
 	&__container {
 		background-color: darkgray;
 	}
-	&__about  {
-		background-color: darksalmon;
-	}
-	&__deck-container {
+	
+	&__block-wrapper {
 		display: flex;
 	}
-	&__deck-main {
+	&__block-main {
 		background-color: darkkhaki;
-		flex: 1 1 auto;
+		flex: 1 1 $basis-block-main;
+		
 
 	}
-	&__deck-aside {
-		background-color: darkmagenta;
-		flex: 0 0 $page_width-aside;
+	&__block-aside {
+		flex: 0 0 $basis-block-aside;
+		background-color: forestgreen;
 		display: flex;
 		flex-direction: column;
-		&--empty {
-			display: none;	
+		.flash-cards__score {
+			flex: 0 0 $basis-score;
+		}
+		.flash-cards__deck-aside {
+			flex: 1 1 $basis-card-aside;
 		}
 	}
 
 }
+

@@ -20,8 +20,16 @@ $font_bold: 700;
 /// @type  Length
 $page_width-max: 90%; //1180px;
 $page_width-min: 50rem;
-$page_width-main: 70%;
-$page_width-aside: 13rem;
+
+$basis-block-main: auto;
+$basis-block-aside: 13rem;
+
+$basis-card-main: 25%;
+$basis-card-aside: auto;
+
+$basis-score: 6rem;
+
+
 
 
 

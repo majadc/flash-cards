@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<main role="main" class="flash-cards">
+	<main role="main" class="flash-cards__page">
 		<header class="flash-cards__header">
 			<h1>Flash cards</h1>
 			
@@ -22,49 +22,66 @@
 			<h2>Matching game</h2>
 			<p class="flash-cards__about">Description of game</p>
 		
-			<div class="flash-cards__deck-container">
-				<div class="flash-cards__deck flash-cards__deck-main">
-					<figure class="flash-cards__card flash-cards__card-main">
-						<img src="images/img1.jpg" alt="" />
-						<figcaption class="flash-cards__card--drop-zone"></figcaption>
-						<p class="flash-cards__card-description">1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-					</figure>
-					<figure class="flash-cards__card flash-cards__card-main">
-						<img src="images/img1.jpg" alt="" />
-						<figcaption class="flash-cards__card--drop-zone"></figcaption>
-						<p class="flash-cards__card-description">2. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-					</figure>
-					<figure class="flash-cards__card flash-cards__card-main">
-						<img src="images/img1.jpg" alt="" />
-						<figcaption class="flash-cards__card--drop-zone"></figcaption>
-						<p class="flash-cards__card-description">1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-					</figure>
-					<figure class="flash-cards__card flash-cards__card-main">
-						<img src="images/img1.jpg" alt="" />
-						<figcaption class="flash-cards__card--drop-zone"></figcaption>
-						<p class="flash-cards__card-description">1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-					</figure>
-					<figure class="flash-cards__card flash-cards__card-main">
-						<img src="images/img1.jpg" alt="" />
-						<figcaption class="flash-cards__card--drop-zone"></figcaption>
-						<p class="flash-cards__card-description">1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
-					</figure>
+			<div class="flash-cards__block-wrapper">
+				<div class="flash-cards__block-main">
+					<div class="flash-cards__deck flash-cards__deck-main">
+						<figure class="flash-cards__card flash-cards__card-main">
+							<div class="flash-cards__card-image">
+								<img src="images/img1.jpg" alt="" />
+								<figcaption class="flash-cards__card--drop-zone"></figcaption>
+							</div>
+							<div class="flash-cards__card-description is-hidden">
+								<p>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+							</div>
+						</figure>
+						<figure class="flash-cards__card flash-cards__card-main">
+							<div class="flash-cards__card-image">
+								<img src="images/img1.jpg" alt="" />
+								<figcaption class="flash-cards__card--drop-zone"></figcaption>
+							</div>
+							<div class="flash-cards__card-description is-hidden">
+								<p>2. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+							</div>
+						</figure>
+						<figure class="flash-cards__card flash-cards__card-main">
+							<div class="flash-cards__card-image">
+								<img src="images/img1.jpg" alt="" />
+								<figcaption class="flash-cards__card--drop-zone"></figcaption>
+							</div>
+							<div class="flash-cards__card-description is-hidden">
+								<p>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+							</div>
+						</figure>
+						<figure class="flash-cards__card flash-cards__card-main">
+							<div class="flash-cards__card-image">
+								<img src="images/img1.jpg" alt="" />
+								<figcaption class="flash-cards__card--drop-zone"></figcaption>
+							</div>
+							<div class="flash-cards__card-description is-hidden">
+								<p>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+							</div>
+						</figure>
+						<figure class="flash-cards__card flash-cards__card-main">
+							<div class="flash-cards__card-image">
+								<img src="images/img1.jpg" alt="" />
+								<figcaption class="flash-cards__card--drop-zone"></figcaption>
+							</div>
+							<div class="flash-cards__card-description is-hidden">
+								<p>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+							</div>
+						</figure>
+					</div>
 				</div>
-				<div class="flash-cards__deck flash-cards__deck-aside">
-					<div class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">
-						1. Sed ut perspiciatis
+				<div class="flash-cards__block-aside">
+					<div class="flash-cards__score">
+						<p>Twój wynik to</p>
 					</div>
-					<div class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">
-						2. Sed ut perspiciatis
-					</div>
-					<div class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">
-						3. Sed ut perspiciatis
-					</div>
-					<div class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">
-						4. Sed ut perspiciatis
-					</div>
-					<div class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">
-						5. Sed ut perspiciatis
+					<div class="flash-cards__deck flash-cards__deck-aside is-up">
+						<h3 class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">1. Sed ut perspiciatis</h3>
+						<h3 class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">2. Sed ut perspiciatis</h3>
+						<h3 class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">3. Sed ut perspiciatis</h3>
+						<h3 class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">4. Sed ut perspiciatis</h3>
+						<h3 class="flash-cards__card flash-cards__card-aside flash-cards__card--draggable">5. Sed ut perspiciatis</h3>
 					</div>
 				</div>
 			</div>
