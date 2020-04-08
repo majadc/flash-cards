@@ -41,14 +41,18 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		// Get the id of the target and add the moved element to the target's DOM
 		const draggableData = ev.dataTransfer.getData("text/plain");
 		//console.log(ev.target);
-		const dropZone = this;
-		console.log(dropZone);
+		const dropZone = ev.target; // this;
+		//console.log(dropZone);
 		let dropZoneFlag =  dropZone.id.split('--')[1];
 		let draggableDataFlag = draggableData.split('--')[1];
-		console.log(dropZoneFlag + ',' + draggableDataFlag);
+		//console.log(dropZoneFlag + ',' + draggableDataFlag);
 		if ( dropZoneFlag === draggableDataFlag ) {
 			dropZone.appendChild(document.getElementById(draggableData));
 		}
+	}//drop
+
+	function enter_handler(ev) {
+		console.log(event.target);
 	}
 
 	
@@ -58,8 +62,9 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	}
 
 	for ( let item of flashCardsMainCards ) {
-		item.addEventListener("drop", drop_handler);
 		item.addEventListener("dragover", dragover_handler);
+		item.addEventListener("drop", drop_handler);
+		
 	}
 
 
