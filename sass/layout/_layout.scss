@@ -25,6 +25,11 @@
 		border: 1px solid darkblue;
 		&-main {
 			padding-bottom: 50px;
+
+		}
+		&--drop-zone {
+			min-height: 50px;
+			background-color: darkgoldenrod;
 		}
 	}
 }
