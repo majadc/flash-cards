@@ -1,35 +1,28 @@
 .flash-cards {
-	width: 100%;
-	background-color: bisque;
-}
-
-.flash-cards {
+	width: $page_width-max;
+	margin:0 auto;
 	&__container {
-		display: flex;
-		background-color: cadetblue;
+		background-color: darkgray;
 	}
-	&__deck {
+	&__about  {
+		background-color: darksalmon;
+	}
+	&__deck-container {
 		display: flex;
-		background-color: darkcyan;
-		&--main {
-			background-color: coral;
-		}
-		&--aside {
-			background-color: crimson;
-		}
-	}//deck
+	}
+	&__deck-main {
+		background-color: darkkhaki;
+		flex: 1 1 auto;
 
-	&__card {
-		margin: 1em;
-		padding: 1em;
-		border: 1px solid darkblue;
-		&-main {
-			padding-bottom: 50px;
-
-		}
-		&--drop-zone {
-			min-height: 50px;
-			background-color: darkgoldenrod;
+	}
+	&__deck-aside {
+		background-color: darkmagenta;
+		flex: 0 0 $page_width-aside;
+		display: flex;
+		flex-direction: column;
+		&--empty {
+			display: none;	
 		}
 	}
+
 }
