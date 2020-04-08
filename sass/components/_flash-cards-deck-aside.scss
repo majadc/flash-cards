@@ -3,14 +3,14 @@
 		background-color: darkmagenta;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
+		justify-content: center;
 		&--empty {
 			display: none;	
 		}
-		&.is-up {
+		&.is-top {
 			justify-content: flex-start;
 		}
-		&.is-down {
+		&.is-bottom {
 			justify-content: flex-end;
 		}
 	}
@@ -21,4 +21,9 @@
 		display: flex;
 		align-items: center;
 	}
+}
+
+
+body {
+	overflow: auto;
 }
