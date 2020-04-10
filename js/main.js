@@ -2,46 +2,7 @@
 window.addEventListener( 'DOMContentLoaded', () =>{
 
 	let deckAside = document.getElementById('flash-cards__deck-aside');
-	let body = document.body;
-	let html = document.documentElement;
-	let documentHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-	let windowHeight = window.innerHeight;
-
 	
-
-	if ( !hasScrollBar() ) {
-		deckAside.classList.remove('is-bottom', 'is-top');	
-		
-	}
-
-	function hasScrollBar () {
-		return ( documentHeight > windowHeight ) ? true : false;
-	}
-
-
-	
-
-	window.addEventListener('scroll', function() {
-		let windowPageOffset = window.pageYOffset;
-		console.log(windowPageOffset);
-		
-		if ( documentHeight === windowHeight + windowPageOffset ) {
-			deckAside.classList.add('is-bottom');
-			deckAside.classList.remove('is-top');
-		}
-		if ( windowPageOffset === 0) {
-			deckAside.classList.remove('is-bottom');
-			deckAside.classList.add('is-top');
-		}	
-		// console.log('window.innerHeight => ' + window.innerHeight);
-		// console.log('window.outerHeight => ' + window.outerHeight);
-		// console.log('window.pageYOffset => ' + window.pageYOffset);
-		// // console.log('document.body.clientHeight=> ' + document.body.clientHeight);
-		// // //console.log(a);
-		// // console.log(b);
-		//  console.log(documentHeight);
-		
-	});
 
 
 
@@ -142,6 +103,7 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	************* DROP
 	*/
 	function drop_handler(ev) {
+		ev.preventDefault();
 		let dropZoneElement =  this;
 		if ( isMaching(dropZoneElement.id, DraggableElementIdCurrent) ) {
 			dropZoneElement.appendChild(document.getElementById(DraggableElementIdCurrent));

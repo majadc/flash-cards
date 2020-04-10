@@ -447,6 +447,7 @@ img {
   flex: 1 1 25%;
   margin: 1em;
   display: flex;
+  background-color: fuchsia;
 }
 .flash-cards__card-image {
   flex: 1 1 99%;
@@ -468,28 +469,23 @@ img {
 
 .flash-cards__deck-aside {
   background-color: darkmagenta;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: fixed;
+  top: 1em;
 }
-.flash-cards__deck-aside--empty {
-  display: none;
-}
-.flash-cards__deck-aside.is-top {
-  justify-content: flex-start;
-}
-.flash-cards__deck-aside.is-bottom {
-  justify-content: flex-end;
+@supports (position: sticky) {
+  .flash-cards__deck-aside {
+    position: sticky;
+  }
 }
 .flash-cards__card-aside {
   background-color: floralwhite;
   margin: 1em 0;
-  display: flex;
-  align-items: center;
 }
-
-body {
-  overflow: auto;
+.flash-cards__card--draggable {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 .flash-cards__page {
@@ -509,14 +505,6 @@ body {
 .flash-cards__block-aside {
   flex: 0 0 13rem;
   background-color: forestgreen;
-  display: flex;
-  flex-direction: column;
-}
-.flash-cards__block-aside .flash-cards__score {
-  flex: 0 0 6rem;
-}
-.flash-cards__block-aside .flash-cards__deck-aside {
-  flex: 1 1 auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,14 +19,14 @@
 	&__block-aside {
 		flex: 0 0 $basis-block-aside;
 		background-color: forestgreen;
-		display: flex;
-		flex-direction: column;
-		.flash-cards__score {
-			flex: 0 0 $basis-score;
-		}
-		.flash-cards__deck-aside {
-			flex: 1 1 $basis-card-aside;
-		}
+		// display: flex;
+		// flex-direction: column;
+		// .flash-cards__score {
+		// 	flex: 0 0 $basis-score;
+		// }
+		// .flash-cards__deck-aside {
+		// 	flex: 1 1 $basis-card-aside;
+		// }
 	}
 
 }

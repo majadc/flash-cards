@@ -1,29 +1,25 @@
 .flash-cards {
 	&__deck-aside {
 		background-color: darkmagenta;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		&--empty {
-			display: none;	
-		}
-		&.is-top {
-			justify-content: flex-start;
-		}
-		&.is-bottom {
-			justify-content: flex-end;
+		position:fixed;
+		top:1em;
+		@supports ( position: sticky ) {
+			position:sticky;
 		}
 	}
 	&__card-aside {
 		background-color: floralwhite;
-		
 		margin: 1em 0;
-		display: flex;
-		align-items: center;
+		
+		
+	}
+	&__card--draggable {
+		margin:0;
+		padding: 0;
+		font-size: 1.2rem;
+		font-weight: normal;	
 	}
 }
 
 
-body {
-	overflow: auto;
-}
+
