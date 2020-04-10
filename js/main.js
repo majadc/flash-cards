@@ -1,17 +1,11 @@
 
 window.addEventListener( 'DOMContentLoaded', () =>{
 
-	let deckAside = document.getElementById('flash-cards__deck-aside');
-	
-
-
-
-
-
 	let flashCardsDraggable = document.getElementsByClassName('flash-cards__card--draggable');
 	let flashCardsDropZone = document.getElementsByClassName('flash-cards__card--drop-zone');
 	let elementDropZoneClassName = 'flash-cards__card--drop-zone';
 
+	let nameClassCardMain = 'flash-cards__card-main';
 	let elementDropZoneId = 'flash-cards__card-drop-zone';
 	let elementDraggableId = 'flash-cards__card-draggable';
 	let isMatchingClassName = "is-matching";
@@ -41,7 +35,17 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		item.addEventListener("drop", drop_handler);
 		
 	}
-	
+
+
+	let buttonsShowDesc = document.getElementsByClassName('flash-cards__button-show-desc');
+	for ( let buttonShowDesc of buttonsShowDesc ) {
+		buttonShowDesc.addEventListener('click', function(){
+			console.log(buttonShowDesc);
+			let cardMainIsPaired = buttonShowDesc.parentElement;
+			cardMainIsPaired.classList.toggle('show-desc');
+			cardMainIsPaired.getElementsByClassName('flash-cards__card-description')[0].classList.toggle('is-hidden');
+		});
+	}
 
 	/*
 	* setting attribut id on draggable elements and dropZone's elements
@@ -108,6 +112,8 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		if ( isMaching(dropZoneElement.id, DraggableElementIdCurrent) ) {
 			dropZoneElement.appendChild(document.getElementById(DraggableElementIdCurrent));
 			dropZoneElement.classList.add(isPairedClassName);
+			let cardMain = dropZoneElement.closest(`.${nameClassCardMain}`);
+			cardMain.classList.add('is-paired');
 		}
 	}
 

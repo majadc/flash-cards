@@ -440,31 +440,61 @@ img {
 }
 
 .flash-cards__deck-main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 .flash-cards__card-main {
-  flex: 1 1 25%;
+  position: relative;
   margin: 1em;
   display: flex;
   background-color: fuchsia;
 }
+.flash-cards__card-main-inner {
+  position: relative;
+}
+.flash-cards__card-main.is-paired .flash-cards__button-show-desc {
+  position: absolute;
+  bottom: 0;
+  left: -1em;
+  width: 1em;
+  height: 1em;
+  background-color: gold;
+}
 .flash-cards__card-image {
-  flex: 1 1 99%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .flash-cards__card-image img {
   display: block;
   max-width: 100%;
-  height: auto;
+  flex: 1 1 80%;
+}
+.flash-cards__card-image > div {
+  flex: 1 1 80%;
+}
+.flash-cards__card-image figcaption {
+  flex: 1 1 20%;
 }
 .flash-cards__card-description {
-  flex: 0 0 0;
-  height: 0px;
-  overflow: hidden;
+  flex: 1 1 50%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  background-color: greenyellow;
+  width: 100%;
+  height: 100%;
+}
+.flash-cards__card-description.is-hidden {
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 .flash-cards__card--drop-zone {
   min-height: 3rem;
   background-color: firebrick;
+  justify-self: flex-end;
 }
 
 .flash-cards__deck-aside {
