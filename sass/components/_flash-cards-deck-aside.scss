@@ -13,7 +13,7 @@
 		margin:0;
 		padding: 0;
 		font-size: 1.2rem;
-		@include font($font-main, normal, $font-normal);
+		@include font($font-main, normal, $normal);
 		background-color: $color-1;
 		color: $color-2;
 		border-radius:0  0.25em 0.25em 0;

@@ -1,0 +1,11 @@
+.flash-cards__footer {
+	margin: $gutter_base 0;
+	text-align: right;
+	a {
+		color: $color-7;
+		@include on_event_haf {
+			color: $color-6;
+			text-decoration: none;
+		}
+	}
+}

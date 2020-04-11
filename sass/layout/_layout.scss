@@ -3,10 +3,6 @@
 		width: $page_width-max;
 		margin:0 auto;
 	}
-	&__container {
-	
-	}
-	
 	&__block-wrapper {
 		display: flex;
 	}
@@ -23,14 +19,13 @@
 		&::before, &::after {
 			content: '';
 			display: block;
-			
 			position: absolute;
 			
 		}
 		&::before{
 			border-left: 1px solid $color-1;
-			height: calc(100% + 2em);
-			top: -$gutter_base;
+			height: calc(100% + 3em);
+			top: -2em;
 			left: 0;
 		}
 		&::after {
@@ -39,15 +34,6 @@
 			bottom: 0;
 			left: -$gutter_base;
 		}
-		
-		// display: flex;
-		// flex-direction: column;
-		// .flash-cards__score {
-		// 	flex: 0 0 $basis-score;
-		// }
-		// .flash-cards__deck-aside {
-		// 	flex: 1 1 $basis-card-aside;
-		// }
 	}
 
 }

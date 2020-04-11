@@ -8,6 +8,7 @@
 		&-main {
 			position: relative;
 			display: flex;
+			box-shadow: 2px -1px 2px 0px color.change($color-7, $alpha: 0.2);
 		}
 		&-info {
 			display: flex;
@@ -32,59 +33,78 @@
 			align-items: center;
 			padding: $gutter-base / 2;
 			h3 {
-				@include font($font-1, normal, $font_normal);
+				@include font($font-1, normal, $normal);
 				font-size: 1.4rem;
 			}	
 		}
 		&-description {
-			flex: 1 1 50%;
 			position: absolute;
 			top: 0;
 			left: 100%;
 			z-index: 10;
-			background-color: greenyellow;
 			width: 100%;
 			height: 100%;
+			display: flex;
+			background-color: $color-7;
+			
+			
+			figcaption {
+				color: black;
+				margin: auto;
+				background-color: $color-4;
+				opacity: 0.7;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				padding: 2em;
+				
+			}
+
 			&.is-hidden {
-				z-index: -1;
-				left: 0;
+				 z-index: -1;
+				 left: 0;
 			}
 			
 		}
+		
 	}//card-main
 
 	&__button-show-desc {
 		position: absolute;
 		top: 50%;
 		left: -0.7em;
-		width: 1em;
-		height: 1em;
 		display: none;
 		cursor: pointer;
 		border: none;
 		background: transparent;
 		opacity: 0;
-		transition: all 2s linear;
+		transition: all 0.2s linear;
+		@include on_event_haf {
+			outline:none;
+			box-shadow: inset 0 -1px 0 0 $color-1;
+		}
 		
 		.icon-book {
 			stroke: $color-1;
 			fill: $color-3;
 			width: 2em;
 			height: 2em;
+			vertical-align: middle;
+		
 		}
 		span {
-			position: absolute;
-			top: -1em;
-			left: -0.7em;
 			display: none;
-			opacity: 0;
 		}
-		&:hover span {
-			display: block;
+		&:hover span, &:active span, &:focus span {
+			display: inline;
 			opacity: 1;
 		}
 	}//button	
 }//flash-cards
+
+
+
 
 .flash-cards__card-main {
 	&-title.is-matching {

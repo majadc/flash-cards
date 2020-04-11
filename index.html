@@ -12,17 +12,20 @@
 	<main role="main" class="flash-cards__page">
 		<header class="flash-cards__header">
 			<h1>Flash cards</h1>
-			
-			<nav class="flash-cards_menu">
+			<nav class="flash-cards__menu">
 				<ul>
-					<li><a href="#">play</a></li>
-					<li><a href="#">match</a></li>
+					<li><a id="flash-cards__button-reset-game">reset game</a></li>
+					<li><a href="#">code on GitHub</a></li>
+					<li><a href="https:\\majadc.com">majadc.com</a></li>
 				</ul>
 			</nav>
 		</header>
-		<section class="flash-cards__container">
-			<h2 id="id">Matching game</h2>
-			<p class="flash-cards__about">Description of game</p>
+		
+			<div class="flash-cards__informations">
+				<h2>Matching game</h2>
+				<p>Match cards with creature's title with their images.</p>
+			</div>
+			
 		
 			<div class="flash-cards__block-wrapper">
 				<div class="flash-cards__block-main">
@@ -36,8 +39,8 @@
 								<figcaption>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</figcaption>
 							</div>
 							<button class="flash-cards__button-show-desc">
-								<span>Description</span>
 								<svg class="icon icon-book"><use xlink:href="images/sprite.svg#icon-book"></use></svg>
+								<span>Description</span>
 							</button>
 						</figure>
 						<figure class="flash-cards__card-main">
@@ -49,9 +52,8 @@
 								<figcaption>2. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</figcaption>
 							</div>
 							<button class="flash-cards__button-show-desc">
-								<span>Description</span>
 								<svg class="icon icon-book"><use xlink:href="images/sprite.svg#icon-book"></use></svg>
-
+								<span>Description</span>
 							</button>
 						</figure>
 						<figure class="flash-cards__card-main">
@@ -63,9 +65,8 @@
 								<figcaption>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</figcaption>
 							</div>
 							<button class="flash-cards__button-show-desc">
-								<span>Description</span>
 								<svg class="icon icon-book"><use xlink:href="images/sprite.svg#icon-book"></use></svg>
-
+								<span>Description</span>
 							</button>
 						</figure>
 						<figure class="flash-cards__card-main">
@@ -77,9 +78,8 @@
 								<figcaption>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</figcaption>
 							</div>
 							<button class="flash-cards__button-show-desc">
-								<span>Description</span>
 								<svg class="icon icon-book"><use xlink:href="images/sprite.svg#icon-book"></use></svg>
-
+								<span>Description</span>
 							</button>
 						</figure>
 						<figure class="flash-cards__card-main">
@@ -91,9 +91,8 @@
 								<figcaption>1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</figcaption>
 							</div>
 							<button class="flash-cards__button-show-desc">
-								<span>Description</span>
 								<svg class="icon icon-book"><use xlink:href="images/sprite.svg#icon-book"></use></svg>
-
+								<span>Description</span>
 							</button>
 						</figure>
 					</div>
@@ -111,10 +110,7 @@
 			</div>
 		</section>
 		<footer class="flash-cards__footer">
-			<ul class="flash-cards__links">
-				<li><a href="https://github.com/majadc/flash-cards">code</a></li>
-				<li><a href="https://majadc.com">majadc.com</a></li>
-			</ul>
+			<a href="https://majadc.com">majadc.com</a>
 		</footer>
 	</main>
 	<script src="js/main.js"></script>

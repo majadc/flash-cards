@@ -1,0 +1,46 @@
+.flash-cards {
+	&__menu {
+		ul {
+			display: flex;
+			list-style: none;
+			justify-content: flex-end;
+			li {
+				margin: 0 0.5em;
+			}
+			li:not(:last-child) {
+				margin-right: 0;
+			}
+			a {
+				display: flex;
+				text-decoration: none;
+				padding: 0.25em;
+				color: $color-7;
+				transition: all 0.2s linear;
+				cursor: pointer;
+				&::before {
+					content: '';
+					display: block;
+					box-shadow:inset 1px -1px 0 0 $color-6;
+					width: 0.5em;
+					height: 0.5em;
+					align-self: flex-end;
+					transform: translateY(-0.2em);
+				}
+				@include on_event_h {
+					color: $color-6;
+					outline: none;
+					
+				}
+				&:hover::before, &:active::before, &:focus::before  {
+					background-color: $color-6;
+					
+				}
+				@include on_event_af {
+					outline: none;
+				}
+			}
+		}
+	}
+}
+
+

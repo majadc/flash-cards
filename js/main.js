@@ -60,6 +60,12 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		});
 	}
 
+	let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
+	buttonResetGame.addEventListener('click', function(){
+		window.location.reload(false)
+		return false;
+	});
+
 	/*
 	* setting attribut id on draggable elements and dropZone's elements
 	*/
