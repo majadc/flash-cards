@@ -53,7 +53,7 @@
 			@content;
 		}
 	} @else {
-		&:hover, &:active {
+		&:active, &:focus {
 			@content;
 		}
 	}
@@ -101,18 +101,18 @@
 
 
 
-/// if $margin top and bottom are not given it takes values from $margin_base-less  $margin_base-more
-/// if $margin left and right not given it takes auto
+/// if $gutter top and bottom are not given it takes values from $gutter_base-less  $gutter_base-more
+/// if $gutter left and right not given it takes auto
 @mixin gutter(
   $less_more: true,
   $right: auto,
   $left: $right,
-  $margin_base-less:$margin_base-less,
-  $margin_base-more:$margin_base-more)
+  $gutter_base-less:$gutter_base-less,
+  $gutter_base-more:$gutter_base-more)
   {
     @if $less_more {
-      margin: $margin_base-less $right $margin_base-more $left;
+      margin: $gutter_base-less $right $gutter_base-more $left;
     } @else {
-      margin: $margin_base-more $right $margin_base-less $left;
+      margin: $gutter_base-more $right $gutter_base-less $left;
     }
 }

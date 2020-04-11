@@ -1,5 +1,5 @@
 html {
-	background-color: white;
+	background-color: $color-2;
 	box-sizing: border-box;
 }
 
@@ -13,10 +13,5 @@ body {
 	line-height: $line_height-base;
 	@include font ($font-main, normal, $font-normal);
 	vertical-align: baseline;
-	
-}
-
-img {
-	max-width: 100%;
-	height:auto;
+	color: $color-1;
 }

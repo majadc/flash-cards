@@ -2,50 +2,47 @@
 	&__deck-main {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-		//grid-auto-flow: dense;
+		gap: $gutter-base;
 	}
 	&__card {
 		&-main {
 			position: relative;
-			margin: 1em;
 			display: flex;
-			&-inner {
-				position: relative;
-				//display: flex;
-				//flex-direction: column;
-			}
-			background-color: fuchsia;
-
-			&.is-paired {
-				.flash-cards__button-show-desc {
-					
-					
-					position: absolute;
-					bottom: 0;
-					left: -1em;
-					width: 1em;
-					height: 1em;
-					background-color: gold;
-				}
-			}
+			// &-inner {
+			// 	position: relative;
+				
+			// }
 		}
-		&-image {
-			//flex: 1 1 50%;
+		&-info {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
+			position: relative;
+			
+		}
+		&-image {
+			flex: 1 1 80%;
 			img {
 				display: block;
 				max-width: 100%;
-				flex: 1 1 80%
 			}
-			>div {
-				flex: 1 1 80%
+		}
+		&-title {
+			flex: 1 1 20%;
+			min-height: 4rem;
+			background-color: $color-1;
+			color: $color-3;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: $gutter-base / 2;
+			h3 {
+				font-weight: normal;
 			}
-			figcaption {
-				flex: 1 1 20%;
+			&.is-paired {
+				background-color: $color-7;
+				color: $color-2;
 			}
-			
 		}
 		&-description {
 			flex: 1 1 50%;
@@ -56,43 +53,71 @@
 			background-color: greenyellow;
 			width: 100%;
 			height: 100%;
+			&.is-hidden {
+				z-index: -1;
+				left: 0;
+			}
 			
 		}
-		&-description.is-hidden {
-			// flex: 0 0 0;
-			// height: 0px;
-			// overflow: hidden;
-			z-index: -1;
-			top: 0;
-			left: 0;
+		.flash-cards__button-show-desc {
+			position: absolute;
+			top: 50%;
+			left: -0.7em;
+			width: 1em;
+			height: 1em;
+			display: none;
+			cursor: pointer;
+			border: none;
+			background: transparent;
+			opacity: 0;
+			transition: all 2s linear;
+			
+			.icon-book {
+				stroke: $color-1;
+				fill: $color-3;
+				width: 2em;
+				height: 2em;
+			}
+			span {
+				position: absolute;
+				top: -1em;
+				left: -0.7em;
+				display: none;
+				opacity: 0;
+			}
+			&:hover span {
+				display: block;
+				opacity: 1;
+			}
 		}
 
-
-
-		&--drop-zone {
-			min-height: 3rem;
-			background-color: firebrick;
-			justify-self: flex-end;
-		}
+		
 	}	
 }
 
 
 
 .flash-cards__card-main {
-	&.show-desc {
-		
-		// position: relative;
-		img {
-			// float: left;
-			// width: 55%;
+	&.is-paired {
+		.flash-cards__button-show-desc {
+			display: block;
+			opacity: 1;
 		}
-		
 	}
-	
 }
 
 
-.flash-cards__card-main.show-desc .flash-cards__card-main-inner {
-	// position: absolute;
+.flash-cards__card {
+	&--drop-zone.is-matching {
+		transform: scale(1.1);
+		background-color: $color-6;
+		position: relative;
+		z-index: 100;
+	}
+	&--drop-zone.is-not-matching {
+		
+		background-color: $color-9;
+		
+		
+	}
 }

@@ -18,11 +18,38 @@ $font_bold: 700;
 
 /// colors
 /// @type Color
+$color-1: #2b4362; //#0a0c18; // font
+$color-2: #d6dde8; // font
+$color-3: #aec3d9;
+$color-4: #f2f3f5;
+$color-5: #f0f1f3;
+$color-6: #0a0c18;
+$color-7: #575c63;
+$color-8: #bbbbbe;
+$color-9: #e8e8e8;
+$color-10: #afc0d7;
+$color-11: #bbbfca;
+$color-12: #e3caac;
+$color-13: #deafa7;
+
+/// font size
+
+$font_size_base-small: 1rem;
+$font_size_base-medium: 1.1rem;
+$font_size_base-large: 1.2rem;
+$line_height-base: 1.6;
+
+
+/// margins
+
+$gutter_base: 1em;
+$gutter_base-less: 1em;
+$gutter_base-more: 1.5em;
 
 
 /// Container's maximum width
 /// @type  Length
-$page_width-max: 90%; //1180px;
+$page_width-max: 95%; //1180px;
 $page_width-min: 50rem;
 
 $basis-block-main: auto;
@@ -55,19 +82,7 @@ $media_queries-up: (
 );
 
 
-/// font size
 
-$font_size_base-small: 1rem;
-$font_size_base-medium: 1.1rem;
-$font_size_base-large: 1.2rem;
-$line_height-base: 1.6;
-
-
-/// margins
-
-$margin_base: 1em;
-$margin_base-less: 1em;
-$margin_base-more: 1.5em;
 
 
 
