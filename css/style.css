@@ -457,7 +457,7 @@ body {
   display: block;
   max-width: 100%;
 }
-.flash-cards__card-title {
+.flash-cards__card-main-title {
   flex: 1 1 20%;
   min-height: 4rem;
   background-color: #2b4362;
@@ -467,12 +467,11 @@ body {
   align-items: center;
   padding: 0.5em;
 }
-.flash-cards__card-title h3 {
-  font-weight: normal;
-}
-.flash-cards__card-title.is-paired {
-  background-color: #575c63;
-  color: #d6dde8;
+.flash-cards__card-main-title h3 {
+  font-family: "Nova Flat", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
 }
 .flash-cards__card-description {
   flex: 1 1 50%;
@@ -488,7 +487,7 @@ body {
   z-index: -1;
   left: 0;
 }
-.flash-cards__card .flash-cards__button-show-desc {
+.flash-cards__button-show-desc {
   position: absolute;
   top: 50%;
   left: -0.7em;
@@ -501,37 +500,41 @@ body {
   opacity: 0;
   transition: all 2s linear;
 }
-.flash-cards__card .flash-cards__button-show-desc .icon-book {
+.flash-cards__button-show-desc .icon-book {
   stroke: #2b4362;
   fill: #aec3d9;
   width: 2em;
   height: 2em;
 }
-.flash-cards__card .flash-cards__button-show-desc span {
+.flash-cards__button-show-desc span {
   position: absolute;
   top: -1em;
   left: -0.7em;
   display: none;
   opacity: 0;
 }
-.flash-cards__card .flash-cards__button-show-desc:hover span {
+.flash-cards__button-show-desc:hover span {
   display: block;
   opacity: 1;
+}
+
+.flash-cards__card-main-title.is-matching {
+  transform: scale(1.1);
+  background-color: #0a0c18;
+  position: relative;
+  z-index: 100;
+}
+.flash-cards__card-main-title.is-not-matching {
+  background-color: #e8e8e8;
 }
 
 .flash-cards__card-main.is-paired .flash-cards__button-show-desc {
   display: block;
   opacity: 1;
 }
-
-.flash-cards__card--drop-zone.is-matching {
-  transform: scale(1.1);
-  background-color: #0a0c18;
-  position: relative;
-  z-index: 100;
-}
-.flash-cards__card--drop-zone.is-not-matching {
-  background-color: #e8e8e8;
+.flash-cards__card-main.is-paired .flash-cards__card-main-title {
+  background-color: #575c63;
+  color: #d6dde8;
 }
 
 .flash-cards__deck-aside {
@@ -546,11 +549,13 @@ body {
 .flash-cards__card-aside {
   margin: 1em 0;
 }
-.flash-cards__card--draggable {
+.flash-cards__card-aside-title {
   margin: 0;
   padding: 0;
   font-size: 1.2rem;
-  font-weight: normal;
+  font-family: "Nova Cut", cursive, "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   background-color: #2b4362;
   color: #d6dde8;
   border-radius: 0 0.25em 0.25em 0;
@@ -570,23 +575,23 @@ body {
   /* Internet Explorer/Edge */
   user-select: none;
 }
-.flash-cards__card--draggable:hover {
+.flash-cards__card-aside-title:hover {
   transform: scale(1.1);
   border-radius: 0.25em;
   box-shadow: 2px -1px 2px 0px rgba(87, 92, 99, 0.5);
 }
-.flash-cards__card--draggable:active, .flash-cards__card--draggable:focus {
+.flash-cards__card-aside-title:active, .flash-cards__card-aside-title:focus {
   border-radius: 0.25em;
   background-color: #aec3d9;
   color: #0a0c18;
   box-shadow: 2px -1px 2px 0px rgba(87, 92, 99, 0.5);
 }
-.flash-cards__card--draggable.is-matching {
+.flash-cards__card-aside-title.is-matching {
   background-color: #0a0c18;
   color: #d6dde8;
   position: relative;
 }
-.flash-cards__card--draggable.is-matching::after {
+.flash-cards__card-aside-title.is-matching::after {
   content: "";
   display: block;
   position: absolute;
@@ -597,13 +602,13 @@ body {
   right: 0;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
-.flash-cards__card--draggable.is-not-matching {
+.flash-cards__card-aside-title.is-not-matching {
   background-color: #e8e8e8;
   color: #aec3d9;
   transform: scale(1);
   box-shadow: none;
 }
-.flash-cards__card--draggable.is-not-matching::after {
+.flash-cards__card-aside-title.is-not-matching::after {
   content: "";
   display: block;
   position: absolute;

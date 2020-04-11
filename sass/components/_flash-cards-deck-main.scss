@@ -8,17 +8,12 @@
 		&-main {
 			position: relative;
 			display: flex;
-			// &-inner {
-			// 	position: relative;
-				
-			// }
 		}
 		&-info {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 			position: relative;
-			
 		}
 		&-image {
 			flex: 1 1 80%;
@@ -27,7 +22,7 @@
 				max-width: 100%;
 			}
 		}
-		&-title {
+		&-main-title {
 			flex: 1 1 20%;
 			min-height: 4rem;
 			background-color: $color-1;
@@ -37,12 +32,9 @@
 			align-items: center;
 			padding: $gutter-base / 2;
 			h3 {
-				font-weight: normal;
-			}
-			&.is-paired {
-				background-color: $color-7;
-				color: $color-2;
-			}
+				@include font($font-1, normal, $font_normal);
+				font-size: 1.4rem;
+			}	
 		}
 		&-description {
 			flex: 1 1 50%;
@@ -59,65 +51,64 @@
 			}
 			
 		}
-		.flash-cards__button-show-desc {
-			position: absolute;
-			top: 50%;
-			left: -0.7em;
-			width: 1em;
-			height: 1em;
-			display: none;
-			cursor: pointer;
-			border: none;
-			background: transparent;
-			opacity: 0;
-			transition: all 2s linear;
-			
-			.icon-book {
-				stroke: $color-1;
-				fill: $color-3;
-				width: 2em;
-				height: 2em;
-			}
-			span {
-				position: absolute;
-				top: -1em;
-				left: -0.7em;
-				display: none;
-				opacity: 0;
-			}
-			&:hover span {
-				display: block;
-				opacity: 1;
-			}
-		}
+	}//card-main
 
+	&__button-show-desc {
+		position: absolute;
+		top: 50%;
+		left: -0.7em;
+		width: 1em;
+		height: 1em;
+		display: none;
+		cursor: pointer;
+		border: none;
+		background: transparent;
+		opacity: 0;
+		transition: all 2s linear;
 		
-	}	
-}
-
-
-
-.flash-cards__card-main {
-	&.is-paired {
-		.flash-cards__button-show-desc {
+		.icon-book {
+			stroke: $color-1;
+			fill: $color-3;
+			width: 2em;
+			height: 2em;
+		}
+		span {
+			position: absolute;
+			top: -1em;
+			left: -0.7em;
+			display: none;
+			opacity: 0;
+		}
+		&:hover span {
 			display: block;
 			opacity: 1;
 		}
-	}
-}
+	}//button	
+}//flash-cards
 
-
-.flash-cards__card {
-	&--drop-zone.is-matching {
+.flash-cards__card-main {
+	&-title.is-matching {
 		transform: scale(1.1);
 		background-color: $color-6;
 		position: relative;
 		z-index: 100;
 	}
-	&--drop-zone.is-not-matching {
-		
-		background-color: $color-9;
-		
-		
+	&-title.is-not-matching {		
+		background-color: $color-9;	
 	}
 }
+
+.flash-cards__card-main.is-paired {
+	.flash-cards__button-show-desc {
+		display: block;
+		opacity: 1;
+	}
+	.flash-cards__card-main-title {
+		background-color: $color-7;
+		color: $color-2;
+	}
+	
+}
+
+
+

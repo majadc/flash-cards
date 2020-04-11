@@ -1,6 +1,5 @@
 .flash-cards {
 	&__deck-aside {
-		
 		position:fixed;
 		top:1em;
 		@supports ( position: sticky ) {
@@ -8,16 +7,13 @@
 		}
 	}
 	&__card-aside {
-		
-		margin: 1em 0;
-		
-		
+		margin: $gutter_base 0;	
 	}
-	&__card--draggable {
+	&__card-aside-title {
 		margin:0;
 		padding: 0;
 		font-size: 1.2rem;
-		font-weight: normal;	
+		@include font($font-main, normal, $font-normal);
 		background-color: $color-1;
 		color: $color-2;
 		border-radius:0  0.25em 0.25em 0;
@@ -26,11 +22,11 @@
 		transition: all 0.3s linear;
 		cursor: pointer;
 		-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none;
 		@include on_event_h {
 			transform: scale(1.1);
 			border-radius: 0.25em;
