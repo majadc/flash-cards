@@ -1,17 +1,45 @@
 
 window.addEventListener( 'DOMContentLoaded', () =>{
+	
+
+
+	//------------show hide descriptions------------
+	let buttonsShowDesc = document.getElementsByClassName('flash-cards__button-show-desc');
+	for ( let buttonShowDesc of buttonsShowDesc ) {
+		buttonShowDesc.addEventListener('click', function(){
+			let cardMainIsPaired = buttonShowDesc.parentElement;
+			cardMainIsPaired.classList.toggle('show-desc');
+			cardMainIsPaired.getElementsByClassName('flash-cards__card-description')[0].classList.toggle('is-hidden');
+		});
+	}
+	//--------------relode game---------------------
+	let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
+	buttonResetGame.addEventListener('click', function(){
+		window.location.reload(false)
+		return false;
+	});
+
+	//----------------------------------------------
+	//---------------------DRAG AND DROP CARDS------
 
 	let flashCardsDraggable = document.getElementsByClassName('flash-cards__card--draggable');
 	let flashCardsDropZone = document.getElementsByClassName('flash-cards__card--drop-zone');
-	let elementDropZoneClassName = 'flash-cards__card--drop-zone';
 
-	let nameClassCardMain = 'flash-cards__card-main';
-	let elementDropZoneId = 'flash-cards__card-drop-zone';
-	let elementDraggableId = 'flash-cards__card-draggable';
-	let isMatchingClassName = "is-matching";
-	let isNotMatchingClassName = "is-not-matching";
-	let isPairedClassName = "is-paired";
-	let enteredClassName = "is-entered";
+	const elementDropZoneClassName = 'flash-cards__card--drop-zone';
+	const elementDraggableClassName = 'flash-cards__card--draggable';
+	
+
+	const cardMainClassName = 'flash-cards__card-main';
+	const elementAsideTitleClassName = 'flash-cards__card-aside-title';
+
+	const elementDropZoneId = 'flash-cards__card-drop-zone';
+	const elementDraggableId = 'flash-cards__card-draggable';
+
+	const isMatchingClassName = "is-matching";
+	const isNotMatchingClassName = "is-not-matching";
+
+	const isPairedClassName = "is-paired";
+	const enteredClassName = "is-entered";
 
 	for (let item of flashCardsDraggable) {
 		item.setAttribute('draggable', 'true');
@@ -28,14 +56,6 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		item.addEventListener("drag", drag_handler);
 		item.addEventListener( "dragstart", dragstart_handler );
 		item.addEventListener("dragover", dragover_handler);
-
-		// item.addEventListener('click', function() {
-		// 	//if ( !DraggableElementCurrent.addEventListener("drag", drag_handler) ) {
-		// 		console.log(this);
-		// 		DraggableElementCurrent.classList.remove('in-move');
-		// 	//}
-		// });
-		
 	}
 
 	for ( let item of flashCardsDropZone ) {
@@ -44,28 +64,13 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 		item.addEventListener("dragleave", dragleave_handler);
 		item.addEventListener("dragend", dragend_handler);
 		item.addEventListener("drop", drop_handler);
-		
 	}
 
 
 	
 
-	let buttonsShowDesc = document.getElementsByClassName('flash-cards__button-show-desc');
-	for ( let buttonShowDesc of buttonsShowDesc ) {
-		buttonShowDesc.addEventListener('click', function(){
-			console.log(buttonShowDesc);
-			let cardMainIsPaired = buttonShowDesc.parentElement;
-			cardMainIsPaired.classList.toggle('show-desc');
-			cardMainIsPaired.getElementsByClassName('flash-cards__card-description')[0].classList.toggle('is-hidden');
-		});
-	}
 
-	let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
-	buttonResetGame.addEventListener('click', function(){
-		window.location.reload(false)
-		return false;
-	});
-
+	//------DRAG AND DROP functions-----------------
 	/*
 	* setting attribut id on draggable elements and dropZone's elements
 	*/
@@ -83,7 +88,7 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	function drag_handler (ev) {
 		ev.preventDefault();
 		DraggableElementCurrent = ev.target;
-		//DraggableElementCurrent.classList.add('in-move');
+		
 	}
 	/*
 	************* START - handler drop and drag
@@ -122,8 +127,8 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	*/
 	function dragleave_handler( ev ) {
 		let dropZoneElement = this;
-		removeClasses(dropZoneElement, enteredClassName, isMatchingClassName, isNotMatchingClassName);
-		removeClasses(DraggableElementCurrent, isMatchingClassName, isNotMatchingClassName);
+		dropZoneElement.classList.remove(enteredClassName, isMatchingClassName, isNotMatchingClassName);
+		DraggableElementCurrent.classList.remove(isMatchingClassName, isNotMatchingClassName);
 		
 		
 	}
@@ -134,8 +139,8 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	function dragend_handler(ev) {
 		ev.preventDefault();
 		let dropZoneElement = this;
-		removeClasses(dropZoneElement,enteredClassName, isMatchingClassName, isNotMatchingClassName);
-		removeClasses(DraggableElementCurrent, isMatchingClassName, isNotMatchingClassName);
+		dropZoneElement.classList.remove(enteredClassName, isMatchingClassName, isNotMatchingClassName);
+		DraggableElementCurrent.classList.remove(isMatchingClassName, isNotMatchingClassName);
 		
 		
 	}
@@ -144,7 +149,6 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	************* DROP
 	*/
 	function drop_handler(ev) {
-		console.log(ev)
 		ev.preventDefault();
 		let dropZoneElement =  this;
 		
@@ -152,20 +156,19 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 			dropZoneElement.innerHTML = "";
 			dropZoneElement.appendChild(document.getElementById(DraggableElementIdCurrent));
 			
-			DraggableElementCurrent.classList.remove('flash-cards__card--draggable', 'flash-cards__card-aside-title');
+			DraggableElementCurrent.classList.remove(elementDraggableClassName, elementAsideTitleClassName);
 			DraggableElementCurrent.setAttribute('draggable', 'false');
 			DraggableElementCurrent.removeAttribute('id');
 
-			//dropZoneElement.classList.add(isPairedClassName);
 
-			let cardMainElement = dropZoneElement.closest(`.${nameClassCardMain}`);
+			let cardMainElement = dropZoneElement.closest(`.${cardMainClassName}`);
 			cardMainElement.classList.add(isPairedClassName);
 
 			dropZoneElement.classList.remove(elementDropZoneClassName);
 			dropZoneElement.removeAttribute('id');
 		}
-		removeClasses(DraggableElementCurrent, isMatchingClassName, isNotMatchingClassName);
-		removeClasses(dropZoneElement,enteredClassName, isMatchingClassName, isNotMatchingClassName);
+		dropZoneElement.classList.remove(enteredClassName, isMatchingClassName, isNotMatchingClassName);
+		DraggableElementCurrent.classList.remove(isMatchingClassName, isNotMatchingClassName);
 	}
 
 	/*
@@ -210,14 +213,5 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	
 	}//setMatchingClass
 
-
-	/*
-	***removes class names from element
-	*/
-	function removeClasses (element, ...arguments) {
-		for ( let i = 0; i < arguments.length; i++ ) {
-			element.classList.remove(arguments[i]);
-		}
-	}
 
 } ); //DOMContentLoaded
