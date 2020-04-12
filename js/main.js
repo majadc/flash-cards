@@ -7,11 +7,22 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	let buttonsShowDesc = document.getElementsByClassName('flash-cards__button-show-desc');
 	for ( let buttonShowDesc of buttonsShowDesc ) {
 		buttonShowDesc.addEventListener('click', function(){
+
 			let cardMainIsPaired = buttonShowDesc.parentElement;
-			cardMainIsPaired.classList.toggle('show-desc');
-			cardMainIsPaired.getElementsByClassName('flash-cards__card-description')[0].classList.toggle('is-hidden');
+			let cardMainDesc = cardMainIsPaired.querySelector('.flash-cards__card-description');
+			
+			if ( !cardMainDesc.classList.contains('is-hidden') && !cardMainDesc.classList.contains('is-visible') ) {
+				cardMainDesc.classList.add('is-visible');
+			} else {
+				cardMainDesc.classList.toggle('is-visible');
+				cardMainDesc.classList.toggle('is-hidden');
+			}
+
 		});
 	}
+	
+
+
 	//--------------relode game---------------------
 	let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
 	buttonResetGame.addEventListener('click', function(){

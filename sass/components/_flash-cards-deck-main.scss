@@ -8,7 +8,7 @@
 		&-main {
 			position: relative;
 			display: flex;
-			box-shadow: 2px -1px 2px 0px color.change($color-7, $alpha: 0.2);
+			box-shadow: -2px 2px 2px 0px color.change($color-7, $alpha: 0.2);
 		}
 		&-info {
 			display: flex;
@@ -18,6 +18,7 @@
 		}
 		&-image {
 			flex: 1 1 80%;
+			position: relative;
 			img {
 				display: block;
 				max-width: 100%;
@@ -39,32 +40,32 @@
 		}
 		&-description {
 			position: absolute;
-			top: 0;
-			left: 100%;
-			z-index: 10;
+			//top: 100%;
+			left: 0;
+			z-index: -1;
 			width: 100%;
-			height: 100%;
+			height: 0;
+			background-color:color.change($color-2, $alpha: 0.6);
+			overflow: hidden;
 			display: flex;
-			background-color: $color-7;
+			
 			
 			
 			figcaption {
-				color: black;
+				color:$color-6;
 				margin: auto;
-				background-color: $color-4;
-				opacity: 0.7;
+				background-color: color.change($color-3, $alpha: 0.5);
+				
 				display: flex;
 				justify-content: center;
 				flex-direction: column;
 				align-items: center;
 				padding: 2em;
+				box-shadow: -2px 0px 2px 0px color.change($color-7, $alpha: 0.2);
 				
 			}
 
-			&.is-hidden {
-				 z-index: -1;
-				 left: 0;
-			}
+			
 			
 		}
 		
@@ -72,34 +73,34 @@
 
 	&__button-show-desc {
 		position: absolute;
-		top: 50%;
-		left: -0.7em;
+		top: 0;
+		right: 0;
+		z-index: 100;
 		display: none;
 		cursor: pointer;
 		border: none;
 		background: transparent;
 		opacity: 0;
 		transition: all 0.2s linear;
+		//background-color: $color-2;
 		@include on_event_haf {
 			outline:none;
 			box-shadow: inset 0 -1px 0 0 $color-1;
 		}
 		
 		.icon-book {
-			stroke: $color-1;
-			fill: $color-3;
-			width: 2em;
-			height: 2em;
+			stroke: $color-7;
+			//fill: $color-7;
+			width: 2.5em;
+			height: 2.5em;
 			vertical-align: middle;
 		
 		}
-		span {
-			display: none;
+		&:hover .icon-book {
+			stroke: $color-6;
+			fill: $color-6;
 		}
-		&:hover span, &:active span, &:focus span {
-			display: inline;
-			opacity: 1;
-		}
+		
 	}//button	
 }//flash-cards
 
@@ -125,10 +126,49 @@
 	}
 	.flash-cards__card-main-title {
 		background-color: $color-7;
-		color: $color-2;
+		background-color: $color-3;
+		color: $color-6;
 	}
 	
 }
 
+
+.flash-cards__card-description {
+	&.is-visible {
+		color: red;
+		animation: show_desc 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+		animation-fill-mode: forwards;
+	}
+	&.is-hidden {
+		animation: hide_desc 0.5s linear;
+		animation-fill-mode: forwards;
+	}
+
+}
+
+
+@keyframes show_desc {
+	0% {
+		top: 100%;
+		height: 0;
+	}
+	100% {
+		top: 0;
+		height: 100%;
+		z-index: 60;
+	}
+}
+@keyframes hide_desc {
+	0% {
+		top: 0;
+		height: 100%;
+		z-index: 60;
+	}
+	100% {
+		top: 100%;
+		height: 0;
+		//z-index: -1;
+	}
+}
 
 
