@@ -1,16 +1,8 @@
-@charset "UTF-8";
-
-/// based on:
-/// @link https://sass-guidelin.es/#architecture
-/// @link https://github.com/HugoGiraudel/sass-boilerplate
 @use 'sass:color';
 //abstracts
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-//base
-@import "base/base";
-@import "base/typography";
 
 //components
 
@@ -23,5 +15,3 @@
 @import "layout/layout";
 @import "layout/header";
 @import "layout/footer";
-
-

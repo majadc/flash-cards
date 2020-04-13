@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "sass --watch sass/style.scss:css/style.css",
 
+    "compile:majadc": "sass sass/style-for_majadc.scss css/css_majadc/flash-cards-for_majadc.css",
+    "build:majadc" : "npm-run-all compile:majadc",
+
     "compile:sass": "sass sass/style.scss css/style.comp.css",
     "prefix:css": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
     "compress:css": "sass --style=compressed css/style.prefix.css css/style.css",

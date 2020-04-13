@@ -7,7 +7,6 @@
 	@include gutter(false);
 	h2 {
 		text-align: center;
-		@include font($font-1, normal $normal);
 	}
 	p {
 		@include gutter;
@@ -16,6 +15,5 @@
 .flash-cards__block-aside h2 {
 	margin:0;
 	padding:0;
-	@include font($font-1, normal, $normal);
 	text-align: right;
 }

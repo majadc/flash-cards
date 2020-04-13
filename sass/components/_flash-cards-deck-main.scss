@@ -19,9 +19,11 @@
 		&-image {
 			flex: 1 1 80%;
 			position: relative;
+			display: flex;
 			img {
 				display: block;
 				max-width: 100%;
+				height: auto;
 			}
 		}
 		&-main-title {
@@ -33,10 +35,6 @@
 			justify-content: center;
 			align-items: center;
 			padding: $gutter-base / 2;
-			h3 {
-				@include font($font-1, normal, $normal);
-				font-size: 1.4rem;
-			}	
 		}
 		&-description {
 			position: absolute;
@@ -50,12 +48,10 @@
 			display: flex;
 			
 			
-			
 			figcaption {
 				color:$color-6;
 				margin: auto;
 				background-color: color.change($color-3, $alpha: 0.5);
-				
 				display: flex;
 				justify-content: center;
 				flex-direction: column;

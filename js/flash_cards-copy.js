@@ -23,7 +23,7 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	
 
 
-	//--------------relode game---------------------
+	//--------------reset game---------------------
 	let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
 	buttonResetGame.addEventListener('click', function(){
 		window.location.reload(false)
@@ -83,7 +83,7 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 
 	//------DRAG AND DROP functions-----------------
 	/*
-	* setting attribut id on draggable elements and dropZone's elements
+	* setting attribute id on draggable elements and dropZone's elements
 	*/
 	function setCardsId( deckFlashCards, idName ) {
 		let i = 1;
