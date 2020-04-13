@@ -149,7 +149,7 @@ let flashCards = {};
 			ev.preventDefault();
 			let dropZoneElement =  this;
 			
-			if ( isMaching(dropZoneElement.id, DraggableElementIdCurrent) ) {
+			if ( isMatching(dropZoneElement.id, DraggableElementIdCurrent) ) {
 				dropZoneElement.innerHTML = "";
 				dropZoneElement.appendChild(document.getElementById(DraggableElementIdCurrent));
 				
@@ -182,7 +182,7 @@ let flashCards = {};
 		/*
 		************* checks if flags in elements ids are matching
 		*/
-		function isMaching ( dropZoneElementId, draggableElementId ) {
+		function isMatching ( dropZoneElementId, draggableElementId ) {
 			let dropZoneElementFlag = getFlag(dropZoneElementId);
 			let draggableElementFlag = getFlag(draggableElementId);
 			if ( dropZoneElementFlag === draggableElementFlag  ) {
@@ -196,7 +196,7 @@ let flashCards = {};
 		*/
 		function setMatchingClass (element, requiredClassName) {
 			if ( element.classList.contains(requiredClassName) ) {
-					if ( isMaching(element.id, DraggableElementIdCurrent) ) {
+					if ( isMatching(element.id, DraggableElementIdCurrent) ) {
 						element.classList.add(isMatchingClassName);
 						DraggableElementCurrent.classList.add(isMatchingClassName);
 					} else {
