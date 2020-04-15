@@ -1,13 +1,7 @@
 /// @type list
 
 /// font
-$font-main: 'Nova Cut', cursive, 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-monospace: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
-$font-1: 'Nova Flat', cursive;
-
-//font-family: 'Nova Cut', cursive;
-//font-family: 'Nova Flat', cursive;
-//font-family: 'Fondamento', cursive;
+$font-main: 'Oswald','Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 /// font's weights
 $light: 300;
@@ -32,13 +26,6 @@ $color-11: #bbbfca;
 $color-12: #e3caac;
 $color-13: #deafa7;
 
-/// font size
-
-$font_size_base-small: 1rem;
-$font_size_base-medium: 1.1rem;
-$font_size_base-large: 1.2rem;
-$line_height-base: 1.6;
-
 
 /// margins
 
@@ -57,11 +44,6 @@ $basis-block-aside: 13rem;
 
 $basis-card-main: 25%;
 $basis-card-aside: auto;
-
-$basis-score: 6rem;
-
-
-
 
 
 //// @type Map

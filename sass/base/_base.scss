@@ -8,10 +8,4 @@ html {
 	margin:0;
 	padding:0;
 }
-body {
-	font-size: $font_size_base-small;
-	line-height: $line_height-base;
-	@include font ($font-main, normal, $normal);
-	vertical-align: baseline;
-	color: $color-1;
-}
+

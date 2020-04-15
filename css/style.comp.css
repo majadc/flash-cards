@@ -11,41 +11,38 @@ html {
 
 body {
   font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Nova Cut", cursive, "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  line-height: 1.4;
   vertical-align: baseline;
   color: #2b4362;
+  font-family: "Oswald", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .flash-cards__header h1 {
-  font-family: "Nova Flat", cursive;
-  font-style: normal;
   font-weight: 400;
   font-size: 2rem;
 }
+.flash-cards__menu a {
+  font-weight: 400;
+}
 .flash-cards__information h2 {
-  font-family: "Nova Flat", cursive;
-  font-style: normal 400;
-  font-weight: inherit;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 .flash-cards__card-main-title h4 {
-  font-family: "Nova Flat", cursive;
-  font-style: normal;
   font-weight: 400;
   font-size: 1.4rem;
 }
 .flash-cards__block-aside h3 {
-  font-family: "Nova Flat", cursive;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.1;
 }
 .flash-cards__card-aside-title {
-  font-family: "Nova Cut", cursive, "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 1.2rem;
+  line-height: 1.1;
 }
 
 .flash-cards__menu ul {

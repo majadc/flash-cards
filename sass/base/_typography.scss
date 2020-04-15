@@ -1,26 +1,42 @@
+body {
+	font-size: 1rem;
+	line-height: 1.4;
+	vertical-align: baseline;
+	color: $color-1;
+	@include font( $font-main, normal, $light);
+}
 .flash-cards {
 	&__header {
 		h1 {
-			@include font ($font-1, normal, $normal);
+			font-weight: $normal;
 			font-size: 2rem;
+		}
+	}
+	&__menu {
+		a {
+			font-weight: $normal;
 		}
 	}
 	&__information {
 		h2 {
-			@include font($font-1, normal $normal);
+			font-weight: $normal;
+			font-size: 1.6rem;
 		}
 	}
 	&__card-main-title {
 		h4 {
-			@include font($font-1, normal, $normal);
+			font-weight: $normal;
 			font-size: 1.4rem;
 		}	
 	}
 	&__block-aside h3 {
-		@include font($font-1, normal, $normal);
+		font-weight: $semi-bold;
+		font-size: 1.6rem;
+		line-height: 1.1;
 	}
 	&__card-aside-title {
-		@include font($font-main, normal, $normal);
+		font-weight: $normal;
 		font-size: 1.2rem;
+		line-height: 1.1;
 	}
 }
