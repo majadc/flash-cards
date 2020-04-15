@@ -202,6 +202,10 @@
     height: 0;
   }
 }
+.flash-cards__block-aside h3 {
+  padding: 0 0.5em;
+  margin: 0 0 1em 0;
+}
 .flash-cards__deck-aside {
   position: fixed;
   top: 1em;
