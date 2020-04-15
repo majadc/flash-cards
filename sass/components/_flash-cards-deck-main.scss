@@ -51,13 +51,14 @@
 				margin: auto;
 				display: flex;
 				flex-direction: column;
-				box-shadow: -2px 0px 2px 0px color.change($color-7, $alpha: 0.2);
+				
 				a {
 					display: block;
 					margin: 0;
 					color: $color-6;
 					text-decoration: none;
 					padding: 1.5em;
+					box-shadow: -2px 0px 2px 0px color.change($color-7, $alpha: 0.2);
 					background-color: color.change($color-3, $alpha: 0.5);
 					transition: all 0.2s linear;
 					@include on_event_haf {

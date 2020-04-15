@@ -321,8 +321,9 @@ body {
 }
 
 .flash-cards__page {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 2.5% 2rem;
 }
 .flash-cards__block-wrapper {
   display: flex;
