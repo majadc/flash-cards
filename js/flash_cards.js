@@ -7,32 +7,55 @@ let flashCards = {};
 		let buttonsShowDesc = document.getElementsByClassName('flash-cards__button-show-desc');
 		for ( let buttonShowDesc of buttonsShowDesc ) {
 			buttonShowDesc.addEventListener('click', function(){
-				console.log('wow');
+
 				let cardMainIsPaired = buttonShowDesc.parentElement;
 				let cardMainDesc = cardMainIsPaired.querySelector('.flash-cards__card-description');
 				
 				if ( !cardMainDesc.classList.contains('is-hidden') && !cardMainDesc.classList.contains('is-visible') ) {
 					cardMainDesc.classList.add('is-visible');
-					console.log('if');
+
 				} else {
 					cardMainDesc.classList.toggle('is-visible');
 					cardMainDesc.classList.toggle('is-hidden');
-					console.log('else');
+
 				}
 
 			});
 		}
 	}//showHideDescription
 
-
+	//--------------reset-game---------------------
 	this.resetGame = function () {
-		//--------------reset-game---------------------
 		let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
 		buttonResetGame.addEventListener('click', function(){
 			window.location.reload(false)
 			return false;
 		});
 	}
+
+	//--------------reorder-Cards-aside---------------------
+	this.reorderCardsAside = function () {
+		let flashCardAside = document.getElementsByClassName('flash-cards__card-aside');
+		let numberFlashCardsAside = flashCardAside.length;
+		let usedOrderIndex = [];
+		for ( let item of flashCardAside) {
+			let orderIndex = getRandomInt(1, numberFlashCardsAside);
+			if (! orderIndexWasUsed(orderIndex, usedOrderIndex) ) {
+				item.style.order = orderIndex;
+				usedOrderIndex.push(orderIndex);
+			}
+		}
+	}
+	
+	function getRandomInt (min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	function orderIndexWasUsed (orderIndex, usedOrderIndex) {
+		return usedOrderIndex.includes(orderIndex);
+	}
+
 
 	//----------------------------------------------
 	//---------------------DRAG AND DROP CARDS------
@@ -41,7 +64,7 @@ let flashCards = {};
 
 		let flashCardsDraggable = document.getElementsByClassName('flash-cards__card--draggable');
 		let flashCardsDropZone = document.getElementsByClassName('flash-cards__card--drop-zone');
-		let flashCardAside = document.getElementsByClassName('flash-cards__card-aside');
+		
 
 		const elementDropZoneClassName = 'flash-cards__card--drop-zone';
 		const elementDraggableClassName = 'flash-cards__card--draggable';
@@ -60,19 +83,6 @@ let flashCards = {};
 
 		setCardsId(flashCardsDraggable, elementDraggableId);
 		setCardsId(flashCardsDropZone, elementDropZoneId);
-
-		let index = 1;
-		let numberFlashCardsAside = flashCardAside.length;
-		let orderFlashCArsAside = [];
-		for ( let i = 0; i < numberFlashCardsAside; i++) {
-			orderFlashCArsAside.push(i+1);
-		}
-		console.log(orderFlashCArsAside);
-		
-		
-			//item.setAttribute('order', i);
-			
-		
 
 		let DraggableElementIdCurrent;
 		let DraggableElementCurrent;
@@ -231,5 +241,6 @@ window.addEventListener( 'DOMContentLoaded', () =>{
 	flashCards.showHideDescription();
 	flashCards.resetGame();
 	flashCards.dragAndDrop();
+	flashCards.reorderCardsAside();
 
 } ); //DOMContentLoaded
