@@ -11,7 +11,7 @@
 		}
 	}
 	&__card-main-title {
-		h3 {
+		h4 {
 			@include font($font-1, normal, $normal);
 			font-size: 1.4rem;
 		}	

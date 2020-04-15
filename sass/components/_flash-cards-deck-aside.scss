@@ -2,12 +2,11 @@
 	&__deck-aside {
 		position:fixed;
 		top:1em;
+		display: flex;
+		flex-direction: column;
 		@supports ( position: sticky ) {
 			position:sticky;
 		}
-	}
-	&__card-aside {
-		margin: $gutter_base 0;	
 	}
 	&__card-aside-title {
 		margin:0;
@@ -16,15 +15,10 @@
 		color: $color-2;
 		border-radius:0  0.25em 0.25em 0;
 		padding:0.5em;
-		margin: 0 0 0 1px;
+		margin: $gutter_base 0;	
 		transition: all 0.3s linear;
 		cursor: pointer;
-		-webkit-touch-callout: none; /* iOS Safari */
-		-webkit-user-select: none; /* Safari */
-		-khtml-user-select: none; /* Konqueror HTML */
-		-moz-user-select: none; /* Old versions of Firefox */
-			-ms-user-select: none; /* Internet Explorer/Edge */
-				user-select: none;
+		user-select: none;
 		@include on_event_h {
 			transform: scale(1.1);
 			border-radius: 0.25em;
@@ -33,7 +27,7 @@
 		@include on_event_af() {
 			border-radius: 0.25em;
 			background-color:$color-7;// $color-3;
-			color: $color-6;
+			color: $color-2;
 			box-shadow: 2px -1px 2px 0px color.change($color-7, $alpha: 0.5);
 		}
 		&.is-matching {

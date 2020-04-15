@@ -41,6 +41,7 @@ let flashCards = {};
 
 		let flashCardsDraggable = document.getElementsByClassName('flash-cards__card--draggable');
 		let flashCardsDropZone = document.getElementsByClassName('flash-cards__card--drop-zone');
+		let flashCardAside = document.getElementsByClassName('flash-cards__card-aside');
 
 		const elementDropZoneClassName = 'flash-cards__card--drop-zone';
 		const elementDraggableClassName = 'flash-cards__card--draggable';
@@ -59,6 +60,19 @@ let flashCards = {};
 
 		setCardsId(flashCardsDraggable, elementDraggableId);
 		setCardsId(flashCardsDropZone, elementDropZoneId);
+
+		let index = 1;
+		let numberFlashCardsAside = flashCardAside.length;
+		let orderFlashCArsAside = [];
+		for ( let i = 0; i < numberFlashCardsAside; i++) {
+			orderFlashCArsAside.push(i+1);
+		}
+		console.log(orderFlashCArsAside);
+		
+		
+			//item.setAttribute('order', i);
+			
+		
 
 		let DraggableElementIdCurrent;
 		let DraggableElementCurrent;

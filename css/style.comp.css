@@ -162,8 +162,15 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 2em;
   box-shadow: -2px 0px 2px 0px rgba(87, 92, 99, 0.2);
+}
+.flash-cards__card-description figcaption a {
+  color: #0a0c18;
+  text-decoration: none;
+  padding: 1.5em;
+}
+.flash-cards__card-description figcaption a:hover, .flash-cards__card-description figcaption a:active, .flash-cards__card-description figcaption a:focus {
+  background-color: rgba(174, 195, 217, 0.8);
 }
 .flash-cards__button-show-desc {
   position: absolute;
@@ -247,6 +254,8 @@ body {
 .flash-cards__deck-aside {
   position: fixed;
   top: 1em;
+  display: flex;
+  flex-direction: column;
 }
 @supports (position: sticky) {
   .flash-cards__deck-aside {
