@@ -30,7 +30,7 @@ body {
   font-style: normal 400;
   font-weight: inherit;
 }
-.flash-cards__card-main-title h3 {
+.flash-cards__card-main-title h4 {
   font-family: "Nova Flat", cursive;
   font-style: normal;
   font-weight: 400;
@@ -157,17 +157,18 @@ body {
 .flash-cards__card-description figcaption {
   color: #0a0c18;
   margin: auto;
-  background-color: rgba(174, 195, 217, 0.5);
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
   box-shadow: -2px 0px 2px 0px rgba(87, 92, 99, 0.2);
 }
 .flash-cards__card-description figcaption a {
+  display: block;
+  margin: 0;
   color: #0a0c18;
   text-decoration: none;
   padding: 1.5em;
+  background-color: rgba(174, 195, 217, 0.5);
+  transition: all 0.2s linear;
 }
 .flash-cards__card-description figcaption a:hover, .flash-cards__card-description figcaption a:active, .flash-cards__card-description figcaption a:focus {
   background-color: rgba(174, 195, 217, 0.8);
@@ -262,9 +263,6 @@ body {
     position: sticky;
   }
 }
-.flash-cards__card-aside {
-  margin: 1em 0;
-}
 .flash-cards__card-aside-title {
   margin: 0;
   padding: 0;
@@ -272,19 +270,9 @@ body {
   color: #d6dde8;
   border-radius: 0 0.25em 0.25em 0;
   padding: 0.5em;
-  margin: 0 0 0 1px;
+  margin: 1em 0;
   transition: all 0.3s linear;
   cursor: pointer;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
 }
 .flash-cards__card-aside-title:hover {
@@ -295,7 +283,7 @@ body {
 .flash-cards__card-aside-title:active, .flash-cards__card-aside-title:focus {
   border-radius: 0.25em;
   background-color: #575c63;
-  color: #0a0c18;
+  color: #d6dde8;
   box-shadow: 2px -1px 2px 0px rgba(87, 92, 99, 0.5);
 }
 .flash-cards__card-aside-title.is-matching {

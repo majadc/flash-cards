@@ -213,29 +213,15 @@
     position: sticky;
   }
 }
-.flash-cards__card-aside {
-  margin: 1em 0;
-}
 .flash-cards__card-aside-title {
-  margin: 0;
   padding: 0;
   background-color: #2b4362;
   color: #d6dde8;
   border-radius: 0 0.25em 0.25em 0;
   padding: 0.5em;
-  margin: 0 0 0 1px;
+  margin: 0 0 1em 1px;
   transition: all 0.3s linear;
   cursor: pointer;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
 }
 .flash-cards__card-aside-title:hover {
