@@ -27,10 +27,12 @@ let flashCards = {};
 	//--------------reset-game---------------------
 	this.resetGame = function () {
 		let buttonResetGame = document.getElementById('flash-cards__button-reset-game');
-		buttonResetGame.addEventListener('click', function(){
-			window.location.reload(false)
-			return false;
-		});
+		if ( buttonResetGame ) {
+			buttonResetGame.addEventListener('click', function(){
+				window.location.reload(false)
+				return false;
+			});
+		}
 	}
 
 	//--------------reorder-Cards-aside---------------------
