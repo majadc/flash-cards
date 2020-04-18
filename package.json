@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/majadc/flash-cards.git"
+    "url": "git+https://github.com/majadc/myth-matching-game.git"
   },
   "author": "majadc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/majadc/flash-cards/issues"
+    "url": "https://github.com/majadc/myth-matching-game/issues"
   },
-  "homepage": "https://github.com/majadc/flash-cards#readme"
+  "homepage": "https://github.com/majadc/myth-matching-game#readme"
 }
