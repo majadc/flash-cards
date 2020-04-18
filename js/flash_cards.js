@@ -134,10 +134,13 @@ let flashCards = {};
 		************* OVER
 		*/
 		function dragover_handler(ev) {
-			// prevent default to allow drop
-			ev.preventDefault();
-			ev.dataTransfer.dropEffect = "move";
 			let dropZoneElement = this;
+			if ( !this.classList.contains(elementDraggableClassName) ) {
+				// prevent default to allow drop
+				ev.preventDefault();	
+			}
+			ev.dataTransfer.dropEffect = "move";
+			
 			setMatchingClass(dropZoneElement, elementDropZoneClassName);
 			
 		}
@@ -153,6 +156,7 @@ let flashCards = {};
 		************* LEAVE
 		*/
 		function dragleave_handler( ev ) {
+			ev.preventDefault();
 			let dropZoneElement = this;
 			dropZoneElement.classList.remove(enteredClassName, isMatchingClassName, isNotMatchingClassName);
 			DraggableElementCurrent.classList.remove(isMatchingClassName, isNotMatchingClassName);
