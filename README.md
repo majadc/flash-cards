@@ -1,7 +1,6 @@
 # flash-cards
 Myth matching game.
-majadc.com [https://majadc.com/myth-matching-game]
-Match a name of a monster with its image.
+The game is on website: [majadc.com](https://majadc.com/myth-matching-game)
 
 JavaScript drag and drop mechanism.
 
