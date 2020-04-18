@@ -156,7 +156,6 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  box-shadow: -2px 0px 2px 0px rgba(87, 92, 99, 0.2);
 }
 .flash-cards__card-description figcaption a {
   display: block;
@@ -164,6 +163,7 @@ body {
   color: #0a0c18;
   text-decoration: none;
   padding: 1.5em;
+  box-shadow: -2px 0px 2px 0px rgba(87, 92, 99, 0.2);
   background-color: rgba(174, 195, 217, 0.5);
   transition: all 0.2s linear;
 }
