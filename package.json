@@ -6,10 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "sass --watch sass/style.scss:css/style.css",
-
     "compile:majadc": "sass sass/style-for_majadc.scss css/css_majadc/flash-cards-for_majadc.css",
-    "build:majadc" : "npm-run-all compile:majadc",
-
+    "build:majadc": "npm-run-all compile:majadc",
     "compile:sass": "sass sass/style.scss css/style.comp.css",
     "prefix:css": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
     "compress:css": "sass --style=compressed css/style.prefix.css css/style.css",
@@ -24,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/majadc/myth-matching-game/issues"
   },
-  "homepage": "https://github.com/majadc/myth-matching-game"
+  "homepage": "https://github.com/majadc/myth-matching-game",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0"
+  }
 }
